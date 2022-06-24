@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear equation in two variables</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: url('/bg.jpg');
+
+            background-size: cover;
+            color: wheat;
+        }
+
+        .container {
+            width: 80vw;
+            height: 50vh;
+            border: 1px solid yellow;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            transition: all 1s ease-out;
+
+        }
+
+        .container:hover {
+            background-color: rgba(0, 0, 0, 0.671);
+            border-radius: 50px;
+            border: 2px solid yellow;
+        }
+
+        .heading {
+            margin: 10px;
+
+        }
+
+        .equations {
+            margin: 10px;
+        }
+
+        .equations>input {
+            width: 50px;
+            background: transparent;
+            outline: none;
+            border: none;
+            border-bottom: 3px solid wheat;
+            color: peachpuff;
+        }
+        #result{
+            padding: 5px;
+            width: 150px;
+            background: none;
+            border: 2px solid yellow;
+            color: wheat;
+            margin: 10px;
+            transition: all 1s ease-out;
+        }
+        #result:hover{
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .footer{
+            background: black;
+            width: 100vw;
+            height: 50px;
+            position: absolute;
+            color: wheat;
+            bottom: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: .76rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class='container'>
+        <div class="heading">
+            <h2>Linear equation in two variables solver</h2>
+        </div>
+        <div class='equations'>
+            <input type="number" name="" id="ax"><label for="x">x+ </label>
+            <input type="number" name="" id="bx"><label for="y">y=</label>
+            <input type="number" name="" id="cx">
+        </div>
+        <div class='equations'>
+            <input type="number" name="" id="dx"><label for="x">x+ </label>
+            <input type="number" name="" id="ex"><label for="y">y=</label>
+            <input type="number" name="" id="fx">
+        </div>
+        <button type="submit" id='result' onclick="solve()"
+           >Generate Result</button>
+        <div id="answers" class="equations">
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div> Designed & Developed By : Syed Hassanul Haque</div>
+    </div>
+
+    <script>
+        // console.log("Welcome to The Aptitude shortcut in js");
+        var answers = document.getElementById('answers')
+        var x, y;
+        function twoVariables(a, b, c, d, e, f) {
+
+            x = ((c * e) - (b * f)) / ((a * e) - (b * d));
+            y = (c - (a * x)) / b;
+
+            // var myWindow = window.open("Answers", "MsgWindow", "width=200,height=200");
+            // myWindow.document.write("Value of x=" + x + "& Value of y=" + y);
+            answers.innerHTML = "Result: <br> x =" + x + "<br>y =" + y;
+        }
+
+        ax.onchange = function () {
+                function changefunction() {
+                    a = ax.value;
+                }
+                changefunction();
+            }
+
+            bx.onchange = function () {
+                function changefunction() {
+                    b = bx.value;
+                }
+                changefunction();
+              }
+
+                cx.onchange = function () {
+                    function changefunction() {
+                        c = cx.value;
+                    }
+                    changefunction();
+                }
+
+                dx.onchange = function () {
+                    function changefunction() {
+                        d = dx.value;
+                    }
+                    changefunction();
+                }
+
+                ex.onchange = function () {
+                    function changefunction() {
+                        e = ex.value;
+                    }
+                    changefunction();
+                }
+
+                fx.onchange = function () {
+                    function changefunction() {x
+                        f = fx.value;
+                    }
+                    changefunction();
+                }
+
+        function solve() {
+           
+
+                // a = a.value;
+                // b = b.value;
+                // c = c.value;
+                // d = d.value;
+                // e = e.value;
+                // f = f.value;
+                twoVariables(a, b, c, d, e, f);
+
+            }
+
+
+    </script>
+</body>
+
+</html>
